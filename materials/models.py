@@ -11,3 +11,4 @@ class Handout(models.Model):
     user = models.TextField()
     score = models.TextField()
     title = models.TextField()
+    directions = models.TextField(default=' ')
