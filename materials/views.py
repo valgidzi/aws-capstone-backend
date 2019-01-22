@@ -7,6 +7,8 @@ from django.http import Http404
 import requests
 import os
 from textstat import textstat
+import pyphen
+import re
 
 
 class TextScore(APIView):
@@ -50,6 +52,22 @@ class Definitions(APIView):
                     definitions.append(data['shortdef'][0])
             return Response({"definitions": definitions})
         return Response({"error": "Request failed"}, status=r.status_code)
+
+class DifficultWords(APIView):
+    def difficult_words(self, text):
+        text_list = re.findall(r"[\w\='‘’]+", text.lower())
+        dic = pyphen.Pyphen(lang='en_US')
+        words = []
+        for word in text_list:
+            hyph = dic.inserted(word)
+            if hyph.count('-') + 1 > 2:
+                words.append(word)
+        return words
+
+    def post(self, request):
+        text = request.data['text']
+        words = self.difficult_words(text)
+        return Response({"words": words})
 
 class HandoutList(APIView):
     def get(self, request, format=None):

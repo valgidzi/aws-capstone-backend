@@ -4,6 +4,7 @@ from materials import views
 
 urlpatterns = [
     path('textscore/', views.TextScore.as_view()),
+    path('difficultwords/', views.DifficultWords.as_view()),
     path('handouts/', views.HandoutList.as_view()),
     path('handouts/<int:pk>/', views.HandoutDetail.as_view()),
     re_path(r'^definitions/$', views.Definitions.as_view()),
