@@ -12,3 +12,5 @@ class Handout(models.Model):
     score = models.TextField()
     title = models.TextField()
     directions = models.TextField(default=' ')
+    display_words = models.BooleanField(default=True)
+    display_definitions = models.BooleanField(default=True)
