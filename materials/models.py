@@ -15,3 +15,4 @@ class Handout(models.Model):
     display_words = models.BooleanField(default=True)
     display_definitions = models.BooleanField(default=True)
     column_order = models.TextField(default=' ')
+    image_url = models.TextField(default='')
