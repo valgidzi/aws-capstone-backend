@@ -56,6 +56,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
     'localhost:3000',
     'localhost:8000',
+    'esl-teachers-corner.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
