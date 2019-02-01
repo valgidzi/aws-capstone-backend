@@ -1,4 +1,4 @@
-## teachers' corner
+## teachers' corner API
 This is the API for _**teachers' corner**_ - a web app designed to help ESL teachers create lesson materials. It was built with Django, has a PostgreSQL database, and was deployed to AWS. I developed this API for my [capstone project](https://github.com/Ada-C10/capstone) at [Ada Developer's Academy](https://www.adadevelopersacademy.org/), which required learning three new technologies to build and deploy a product in 4 weeks. The repo for the frontend React app can be found [here](https://github.com/valgidzi/capstone-frontend).
 
 ### Endpoints
